@@ -1,0 +1,22 @@
+{% extends 'tasks/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm" style="max-width:400px;margin:auto;">
+    <div class="card-body">
+        <h2 class="h4 mb-4 text-center">Create account</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+
+            <button class="btn btn-success w-100">Sign up</button>
+        </form>
+
+        <div class="text-center mt-3">
+            <small>Already have an account? <a href="{% url 'login' %}">Login</a></small>
+        </div>
+    </div>
+</div>
+{% endblock %}

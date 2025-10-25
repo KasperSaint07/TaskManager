@@ -1,0 +1,18 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Delete Task{% endblock %}
+
+{% block content %}
+<div class="card border-danger shadow-sm">
+    <div class="card-body">
+        <h2 class="h4 text-danger mb-3">Are you sure?</h2>
+        <p>Delete task: <strong>{{ task.title }}</strong>?</p>
+
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn btn-danger">Yes, delete</button>
+            <a class="btn btn-secondary" href="{% url 'task_list' %}">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
