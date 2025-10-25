@@ -3,7 +3,7 @@
 A simple task manager web app built with Django.  
 Users can register, log in, and manage their personal task list.
 
-## 🚀 Features
+Features
 
 - User authentication
   - Register / Login / Logout
@@ -15,18 +15,39 @@ Users can register, log in, and manage their personal task list.
   - `To Do`, `In Progress`, `Done`
 - Optional deadline with calendar picker
 - Admin panel (Django admin)
+  
 
-## 🖼 Screenshots
+Tech Stack
 
-> (Добавь сюда скриншоты папкой `screenshots/` и вставь картинки в README через Markdown)
+Python 3.11
 
-- Login page  
-- Task list  
-- Create task form  
-- Admin panel
+Django 5
 
-Пример (заменишь на свои ссылки):
-```markdown
-![Task List](screenshots/task_list.png)
-![Create Task](screenshots/create_task.png)
-![Admin](screenshots/admin.png)
+SQLite (локальная база)
+
+Django Crispy Forms + Bootstrap 5 (UI форм)
+
+config/            # Django project settings, urls, etc.
+tasks/
+  models.py        # Task model
+  forms.py         # TaskForm + RegisterForm
+  views.py         # Auth + CRUD logic
+  urls.py          # Routes
+  templates/tasks/ # HTML templates (Bootstrap)
+manage.py          # Django entry point
+db.sqlite3         # Local dev database
+
+
+Auth flow
+
+/register/ – create account
+
+/login/ – sign in
+
+/logout/ – sign out
+
+/ – your personal tasks
+
+/create/ – create task
+
+/admin/ – admin panel (superuser only)
